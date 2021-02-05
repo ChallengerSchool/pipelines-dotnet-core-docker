@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "csvideodev-d242"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "csvideodev-d242"
+  template:
+    metadata:
+      labels:
+        app: "csvideodev-d242"
+    spec:
+      containers:
+        - name: "csvideodev-d242"
+          image: "pipelinesexample.azurecr.io/csvideodev"
+          ports:
+          - containerPort: 80
